@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="loginDesign.css">
+</head>
+<body>
+  
+  <form id="loginForm">
+    <label for="username">Username:</label><br>
+    <input type="text" id="username" name="username"><br><br>
+
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" name="password"><br><br>
+
+    <input type="submit" value="Login">
+  </form>
+
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent actual form submission
+
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      if (username === '' || password === '') {
+        alert('Please enter both username and password.');
+        return;
+      }
+
+      // Simulate login success (replace with real backend request in production)
+      if (username === 'love' && password === '143') {
+        alert('Login successful!');
+        window.location.href = "apologyweb.html"; 
+        // You can redirect to a dashboard or home page here
+        // window.location.href = '/dashboard.html';
+      } else {
+        alert('Invalid credentials. Try again.');
+      }
+    });
+  </script>
+</body>
+</html>
